@@ -1,0 +1,131 @@
+/* Card holder styling */
+.card-holder {
+  background-color: #ffffff;
+  margin: 20px auto;
+  font-size: 18px;
+  padding: 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 1000px;
+}
+
+/* Card header styling */
+.card-holder h2 {
+  color: #6d44b8;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Order details styling */
+.card-holder p {
+  margin: 10px 0;
+  font-size: 1em;
+  color: #333;
+}
+
+/* Styling for strong text in order details */
+.card-holder p strong {
+  font-weight: 600;
+}
+
+/* Button styling */
+.card-holder button {
+  width: 100%;
+  height: 40px;
+  margin: 20px auto;
+  display: block;
+  color: #ffffff;
+  background: #573b8a;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  transition: background 0.2s ease-in;
+  cursor: pointer;
+}
+
+.card-holder button:hover {
+  background: #6d44b8;
+}
+
+/* Styling for "Order not found" message */
+.order-not-found {
+  background-color: #fff;
+  padding: 20px;
+  font-size: 1.25em;
+  color: #333;
+  border: 1px solid #6d44b8;
+  border-radius: 4px;
+  font-weight: 400;
+  text-align: center;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+/* Table styling for orders */
+.table-holder {
+  margin: 20px auto;
+  width: 80%;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  
+}
+
+.table-holder table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table-holder th, .table-holder td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.table-holder th {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.table-holder td {
+  background-color: #fff;
+}
+
+.table-holder tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Loading message */
+.loading-message {
+  text-align: center;
+  font-size: 1.25em;
+  color: #888;
+  padding: 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .card-holder {
+    width: 95%;
+  }
+
+  .table-holder {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .table-holder table {
+    font-size: 0.9em;
+  }
+
+  .card-holder button {
+    font-size: 0.9em;
+  }
+}

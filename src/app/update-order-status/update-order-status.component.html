@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="card-holder">
+    <h2>Update Order Status</h2>
+
+    <!-- Show loading message while data is being fetched -->
+    <div *ngIf="loading" class="loading-message">Loading orders...</div>
+
+    <!-- Display orders when not loading -->
+    <div *ngIf="!loading">
+      <div class="table-holder">
+        <table>
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Pickup Location</th>
+              <th>Dropoff Location</th>
+              <th>Status</th>
+              <th>Update Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of orders">
+              <td>{{ order.order_id }}</td>
+              <td>{{ order.pickup_location }}</td>
+              <td>{{ order.dropoff_location }}</td>
+              <td>{{ order.status }}</td>
+              <td>
+                <select [(ngModel)]="order.status" 
+                        (change)="updateStatus(order.order_id, order.status)">
+                  <option *ngFor="let status of statusOptions" [value]="status">
+                    {{ status }}
+                  </option>
+                </select>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Show "Order not found" message if no orders are present -->
+    <div *ngIf="orders.length === 0 && !loading" class="order-not-found">
+      No orders found.
+    </div>
+  </div>
+</div>

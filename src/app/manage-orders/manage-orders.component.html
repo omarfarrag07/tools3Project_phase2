@@ -1,0 +1,42 @@
+<div class="card-holder">
+    <h2>Manage Orders</h2>
+  
+    <!-- Show loading message while data is being fetched -->
+    <div *ngIf="loading" class="loading-message">Loading orders...</div>
+  
+    <!-- Display orders when not loading -->
+    <div *ngIf="!loading">
+      <div class="table-holder">
+        <table>
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Pickup Location</th>
+              <th>Dropoff Location</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of orders">
+              <td>{{ order.order_id }}</td>
+              <td>{{ order.pickup_location }}</td>
+              <td>{{ order.dropoff_location }}</td>
+              <td>{{ order.status }}</td>
+
+              <td>
+                <!-- Button to update the order status -->
+                <button (click)="updateOrderStatus(order.order_id, 'Completed')">Complete</button>
+                <button (click)="updateOrderStatus(order.order_id, 'Cancelled')">Cancel</button>
+                <!-- Button to delete the order -->
+                <button (click)="deleteOrder(order.order_id)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button (click)="navigateToAssignCourier()">Assign to a </button>
+
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,45 @@
+<div class="card-holder">
+    <h2>Assigned Orders to Courier</h2>
+  
+    <!-- Show loading message while data is being fetched -->
+    <div *ngIf="loading" class="loading-message">Loading orders...</div>
+  
+    <!-- Display orders when not loading -->
+    <div *ngIf="!loading">
+      <div class="table-holder">
+        <table>
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Pickup Location</th>
+              <th>Dropoff Location</th>
+              <th>Assigned Courier</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of orders">
+              <td>{{ order.order_id }}</td>
+              <td>{{ order.pickup_location }}</td>
+              <td>{{ order.dropoff_location }}</td>
+              <td>{{ order.courier_id }}</td>
+              <td>{{ order.status }}</td>
+              <td>
+                <!-- Option to reassign the courier -->
+                <select [(ngModel)]="order.courier_id">
+                  <option *ngFor="let courier of couriers" [value]="courier.id">
+                    {{ courier.name }}
+                  </option>
+                </select>
+                
+                
+                <button (click)="reassignOrder(order.order_id, order.courier_id)">Reassign</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,66 @@
+/* Card holder styling */
+.card-holder {
+    background-color: #ffffff;
+    margin: 20px auto;
+    font-size: 18px;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+  }
+  
+  /* Table styling for orders */
+  .table-holder {
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .table-holder table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .table-holder th, .table-holder td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .table-holder th {
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  .table-holder td {
+    background-color: #fff;
+  }
+  
+  .table-holder tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Button styling */
+  .table-holder button {
+    background: #573b8a;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    border: none;
+  }
+  
+  .table-holder button:hover {
+    background: #6d44b8;
+  }
+  
+  /* Loading message */
+  .loading-message {
+    text-align: center;
+    font-size: 1.25em;
+    color: #888;
+    padding: 20px;
+  }
+  

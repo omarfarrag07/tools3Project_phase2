@@ -1,0 +1,98 @@
+/* Navbar styles */
+nav {
+    background: rgba(87, 59, 138, 0.8); /* Semi-transparent background for the nav bar */
+    box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width: 80%;
+    margin: 20px auto;
+    padding: 15px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 15px;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background: #6d44b8;
+    color: #eee;
+}
+
+nav ul li a.active {
+    background: #573b8a;
+    color: #fff;
+}
+
+/* Navbar for different screen sizes */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}
+
+/* Common styles for input and buttons */
+input[type="text"], input[type="password"] {
+    width: 60%;
+    height: 40px;
+    background: #e0dede;
+    margin: 10px auto;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+    font-size: 1em;
+}
+
+button {
+    width: 60%;
+    height: 50px;
+    margin: 20px auto;
+    display: block;
+    color: #fff;
+    background: #573b8a;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.2s ease-in;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #6d44b8;
+}
+
+/* Parent container */
+.parent {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+    margin: 0;
+    padding: 0;
+}

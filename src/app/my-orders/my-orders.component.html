@@ -1,0 +1,9 @@
+<div *ngFor="let order of orders">
+  <div class="card">
+    <p>Order ID: {{ order.order_id }}</p>
+    <p><strong>Status:</strong> {{ order.status }}</p>
+    <p><strong>Package Details:</strong> {{ order.package_details }}</p>
+    <!-- Add a button to view details -->
+    <button (click)="viewOrderDetails(order.order_id)">View Details</button>
+  </div>
+</div>

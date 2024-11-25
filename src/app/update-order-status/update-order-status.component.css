@@ -1,0 +1,98 @@
+/* Card holder styling */
+.card-holder {
+    background-color: #ffffff;
+    margin: 20px auto;
+    font-size: 18px;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 750px;
+  }
+  
+  /* Card header styling */
+  .card-holder h2 {
+    color: #6d44b8;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Table styling for orders */
+  .table-holder {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .table-holder th, .table-holder td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .table-holder th {
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  .table-holder td {
+    background-color: #fff;
+  }
+  
+  .table-holder tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Styling for select dropdown */
+  .table-holder select {
+    padding: 8px 12px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    width: 100%;
+  }
+  
+  /* Loading message */
+  .loading-message {
+    text-align: center;
+    font-size: 1.25em;
+    color: #888;
+    padding: 20px;
+  }
+  
+  /* Styling for "Order not found" message */
+  .order-not-found {
+    background-color: #fff;
+    padding: 20px;
+    font-size: 1.25em;
+    color: #333;
+    border: 1px solid #6d44b8;
+    border-radius: 4px;
+    font-weight: 400;
+    text-align: center;
+    max-width: 500px;
+    margin: 20px auto;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .card-holder {
+      width: 95%;
+    }
+  
+    .table-holder {
+      width: 95%;
+      padding: 15px;
+    }
+  
+    .table-holder table {
+      font-size: 0.9em;
+    }
+  
+    .card-holder button {
+      font-size: 0.9em;
+    }
+  }
+  

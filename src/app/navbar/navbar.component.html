@@ -1,0 +1,19 @@
+<nav>
+    <ul>
+      <!-- Links for Customers -->
+      <li *ngIf="userRole === 'customer'"><a routerLink="/create-order">Create Order</a></li>
+      <li *ngIf="userRole === 'customer'"><a routerLink="/my-orders">My Orders</a></li>
+  
+      <!-- Links for Couriers -->
+      <li *ngIf="userRole === 'courier'"><a routerLink="/assigned-orders">Assigned Orders</a></li>
+      <li *ngIf="userRole === 'courier'"><a routerLink="/update-order-status">Update Order Status</a></li>
+  
+      <!-- Links for Admins -->
+      <li *ngIf="userRole === 'admin'"><a routerLink="/manage-orders">Manage Orders</a></li>
+      <li *ngIf="userRole === 'admin'"><a routerLink="/assigned-orders-to-courier">Assign Orders to Couriers</a></li>
+  
+      <!-- Common Link for all users -->
+      <li><a (click)="logout()">Logout</a></li>
+    </ul>
+  </nav>
+  

@@ -1,0 +1,16 @@
+<div *ngIf="loading">Loading order details...</div>
+
+<div *ngIf="!loading && order" class="card-holder">
+  <h2>Order Details</h2>
+  <p><strong>Order ID:</strong> {{ order?.order_id }}</p>
+  <p><strong>Pickup Location:</strong> {{ order?.pickup_location }}</p>
+  <p><strong>Drop-off Location:</strong> {{ order?.dropoff_location }}</p>
+  <p><strong>Status:</strong> {{ order?.status }}</p>
+  <p><strong>Package Details:</strong> {{ order?.package_details }}</p>
+
+  <button (click)="cancelOrder()" *ngIf="order?.status === 'pending'">Cancel Order</button>
+</div>
+
+<div *ngIf="!loading && !order" class="order-not-found">
+  Order not found.
+</div>
