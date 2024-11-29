@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Your frontend Dockerfile
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./backend  # Path to your backend code and Dockerfile
+      dockerfile: Dockerfile  # Your backend Dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db-container
+    environment:
+      - DB_HOST=db-container
+      - DB_PORT=5432
+      - DB_USER=omar
+      - DB_PASSWORD=12345678
+      - DB_NAME=app_base
+    networks:
+      - app-network
+
+  db-container:
+    build:
+      context: ./backend/config  # Path to your database Dockerfile and initialization scripts
+      dockerfile: Dockerfile  # Your database Dockerfile
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=omar
+      - POSTGRES_PASSWORD=12345678
+      - POSTGRES_DB=app_base
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  db_data:
