@@ -17,7 +17,7 @@ RUN npm install -g @angular/cli
 COPY . .
 
 # Expose port 4200 for the web server
-EXPOSE 4200
+EXPOSE 8080
 
 # Run the Angular app using 'ng serve'
 CMD ["ng", "serve", "--host", "0.0.0.0"]
