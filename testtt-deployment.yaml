@@ -1,0 +1,152 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    alpha.image.policy.openshift.io/resolve-names: '*'
+    app.openshift.io/route-disabled: "false"
+    app.openshift.io/vcs-ref: ""
+    app.openshift.io/vcs-uri: https://github.com/omarfarrag07/tools3Project_phase2
+    deployment.kubernetes.io/revision: "1"
+    image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"testtt:latest","namespace":"omar-farrag-dev"},"fieldPath":"spec.template.spec.containers[?(@.name==\"testtt\")].image","paused":"false"}]'
+    openshift.io/generated-by: OpenShiftWebConsole
+  creationTimestamp: "2024-12-24T18:17:21Z"
+  generation: 1
+  labels:
+    app: testtt
+    app.kubernetes.io/component: testtt
+    app.kubernetes.io/instance: testtt
+    app.kubernetes.io/name: testtt
+    app.kubernetes.io/part-of: tools-3-project-phase-2-app
+  name: testtt
+  namespace: omar-farrag-dev
+  resourceVersion: "59455708"
+  uid: 97a58ab8-2d89-47bd-be41-be0bd0292144
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: testtt
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: testtt
+        deployment: testtt
+    spec:
+      containers:
+      - image: image-registry.openshift-image-registry.svc:5000/omar-farrag-dev/testtt:latest
+        imagePullPolicy: Always
+        name: testtt
+        ports:
+        - containerPort: 4200
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2024-12-24T18:17:21Z"
+    lastUpdateTime: "2024-12-24T18:20:25Z"
+    message: ReplicaSet "testtt-788dff7b6b" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  - lastTransitionTime: "2024-12-24T18:43:10Z"
+    lastUpdateTime: "2024-12-24T18:43:10Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  observedGeneration: 1
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    alpha.image.policy.openshift.io/resolve-names: '*'
+    app.openshift.io/route-disabled: "false"
+    app.openshift.io/vcs-ref: ""
+    app.openshift.io/vcs-uri: https://github.com/omarfarrag07/tools3Project_phase2
+    deployment.kubernetes.io/revision: "1"
+    image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"testtt:latest","namespace":"omar-farrag-dev"},"fieldPath":"spec.template.spec.containers[?(@.name==\"testtt\")].image","paused":"false"}]'
+    openshift.io/generated-by: OpenShiftWebConsole
+  creationTimestamp: "2024-12-24T18:17:21Z"
+  generation: 1
+  labels:
+    app: testtt
+    app.kubernetes.io/component: testtt
+    app.kubernetes.io/instance: testtt
+    app.kubernetes.io/name: testtt
+    app.kubernetes.io/part-of: tools-3-project-phase-2-app
+  name: testtt
+  namespace: omar-farrag-dev
+  resourceVersion: "59455708"
+  uid: 97a58ab8-2d89-47bd-be41-be0bd0292144
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: testtt
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: testtt
+        deployment: testtt
+    spec:
+      containers:
+      - image: image-registry.openshift-image-registry.svc:5000/omar-farrag-dev/testtt:latest
+        imagePullPolicy: Always
+        name: testtt
+        ports:
+        - containerPort: 4200
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2024-12-24T18:17:21Z"
+    lastUpdateTime: "2024-12-24T18:20:25Z"
+    message: ReplicaSet "testtt-788dff7b6b" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  - lastTransitionTime: "2024-12-24T18:43:10Z"
+    lastUpdateTime: "2024-12-24T18:43:10Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  observedGeneration: 1
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1
