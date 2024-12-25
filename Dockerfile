@@ -16,8 +16,21 @@ RUN npm install -g @angular/cli
 # Copy the rest of the application code
 COPY . .
 
-# Expose port 4200 for the web server
+FROM nginx:stable-alpine
+
+# Set permissions for NGINX configuration
+RUN mkdir -p /tmp/nginx && chmod -R 777 /etc/nginx
+
+# Copy the NGINX configuration file
+COPY ./nginx.conf /etc/nginx/nginx.conf
+
+# Copy the built Angular files from the build stage
+COPY --from=build /app/dist /usr/share/nginx/html
+
 EXPOSE 8080
+
+# Use non-root user for running NGINX
+USER nginx
 
 # Run the Angular app using 'ng serve'
 CMD ["ng", "serve", "--host", "0.0.0.0"]
